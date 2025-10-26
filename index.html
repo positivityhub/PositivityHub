@@ -890,6 +890,34 @@
                         <a href="https://nutblaster07.github.io/Farmingform/" class="btn btn-register">Register Now</a>
                     </div>
                 </div>
+
+                <div class="product-card">
+                    <div class="product-icon">🪱</div>
+                    <h3>Vermicompost Mastery</h3>
+                    <p class="product-tagline">Nature's Black Gold</p>
+                    <p class="product-description">
+                        Master the art of vermicomposting and create nutrient-rich organic fertilizer. Learn to set up and manage worm farms that transform waste into wealth for your soil.
+                    </p>
+                    <div class="product-price">₹2,999</div>
+                    <div class="product-buttons">
+                        <a href="#" class="btn btn-learn" onclick="alert('Full course details coming soon!'); return false;">Learn More</a>
+                        <a href="https://nutblaster07.github.io/FORMS/" class="btn btn-register">Register Now</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-icon">🍄</div>
+                    <h3>Mushroom Cultivation</h3>
+                    <p class="product-tagline">Grow Your Own Superfood</p>
+                    <p class="product-description">
+                        Learn professional mushroom farming techniques from spawn to harvest. Discover profitable cultivation methods for oyster, button, and specialty mushrooms at home or commercially.
+                    </p>
+                    <div class="product-price">₹2,999</div>
+                    <div class="product-buttons">
+                        <a href="#" class="btn btn-learn" onclick="alert('Full course details coming soon!'); return false;">Learn More</a>
+                        <a href="https://nutblaster07.github.io/FORMS/" class="btn btn-register">Register Now</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -912,138 +940,4 @@
         <div class="social-links">
             <a href="https://www.instagram.com/hazarika.t?igsh=MWxlcm83bGJkZGphdA==" title="Facebook"><img src="icons8-facebook-48.png" alt="Facebook"></a>
             <a href="https://www.instagram.com/hazarika.t?igsh=MWxlcm83bGJkZGphdA==" title="Instagram"><img src="icons8-instagram-48.png" alt="Instagram"></a>
-            <a href="https://www.instagram.com/hazarika.t?igsh=MWxlcm83bGJkZGphdA==" title="Twitter"><img src="icons8-x-50.png" alt="Twitter"></a>
-            <a href="https://www.instagram.com/hazarika.t?igsh=MWxlcm83bGJkZGphdA==" title="YouTube"><img src="icons8-youtube-48.png" alt="YouTube"></a>
-        </div>
-    </footer>
-
-    <!-- Registration Modal -->
-    <div id="registrationModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle">Register Now</h2>
-            <form id="registrationForm" onsubmit="submitForm(event)">
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Why are you interested? (Optional)</label>
-                    <textarea id="message" name="message"></textarea>
-                </div>
-                <input type="hidden" id="courseType" name="courseType" value="">
-                <button type="submit" class="submit-btn">Submit Registration</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        const quotes = [
-            { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
-            { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
-            { text: "Your limitation—it's only your imagination.", author: "Unknown" },
-            { text: "The harder you work for something, the greater you'll feel when you achieve it.", author: "Unknown" },
-            { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
-            { text: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
-            { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
-            { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
-            { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
-            { text: "Everything you've ever wanted is on the other side of fear.", author: "George Addair" }
-        ];
-
-        let currentQuoteIndex = 0;
-
-        function displayQuote(index) {
-            document.getElementById('quoteText').textContent = `"${quotes[index].text}"`;
-            document.getElementById('quoteAuthor').textContent = `- ${quotes[index].author}`;
-        }
-
-        function nextQuote() {
-            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-            displayQuote(currentQuoteIndex);
-        }
-
-        function previousQuote() {
-            currentQuoteIndex = (currentQuoteIndex - 1 + quotes.length) % quotes.length;
-            displayQuote(currentQuoteIndex);
-        }
-
-        setInterval(nextQuote, 10000);
-
-        let currentCourse = '';
-
-        function openModal(type) {
-            currentCourse = type;
-            const modal = document.getElementById('registrationModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const courseTypeInput = document.getElementById('courseType');
-            
-            if (type === 'money') {
-                modalTitle.textContent = 'Register for Money Frequency Mastery';
-                courseTypeInput.value = 'Money Frequency Mastery';
-            } else if (type === 'farming') {
-                modalTitle.textContent = 'Register for Natural Farming Revolution';
-                courseTypeInput.value = 'Natural Farming Revolution';
-            }
-            
-            modal.style.display = 'flex';
-            document.getElementById('registrationForm').reset();
-            courseTypeInput.value = courseTypeInput.value;
-        }
-
-        function closeModal() {
-            document.getElementById('registrationModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('registrationModal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-
-        function submitForm(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(event.target);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                message: formData.get('message'),
-                courseType: formData.get('courseType'),
-                timestamp: new Date().toISOString()
-            };
-
-            console.log('Form submitted:', data);
-            
-            alert(`✅ Registration successful!\n\nThank you ${data.name}! We'll contact you soon at ${data.email}`);
-            
-            closeModal();
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+            <a href="https://www.instagram.com/hazarika.t?igsh=MWxlcm83
